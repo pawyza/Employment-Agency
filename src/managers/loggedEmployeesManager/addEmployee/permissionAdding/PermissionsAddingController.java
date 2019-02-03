@@ -27,6 +27,11 @@ public class PermissionsAddingController {
     public void setDataContainer(DataContainer dataContainer) {
         this.dataContainer = dataContainer;
     }
+
+    public void prepare(){
+
+    }
+
     @FXML
     private ChoiceBox<?> choiceLanguage;
 

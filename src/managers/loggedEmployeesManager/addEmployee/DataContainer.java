@@ -168,4 +168,15 @@ public class DataContainer {
     public void setAdditionalLanguages(ArrayList<String> additionalLanguages) {
         this.additionalLanguages = additionalLanguages;
     }
+
+    private ArrayList<String> formerPositions;
+
+    public ArrayList<String> getFormerPositions() {
+        return formerPositions;
+    }
+
+    public void setFormerPositions(ArrayList<String> formerPositions) {
+        this.formerPositions = formerPositions;
+    }
+
 }

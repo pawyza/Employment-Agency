@@ -11,7 +11,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@../../../../resources/stylesheets/login.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="managers.loggedEmployeesManager.addEmployee.formerPositionAdding.FormerPositionsAddingController">
    <children>
       <VBox layoutY="60.0" prefHeight="300.0" prefWidth="600.0">
@@ -42,7 +41,7 @@
                               <Insets />
                            </VBox.margin>
                         </ChoiceBox>
-                        <Button fx:id="btnDelete" disable="true" mnemonicParsing="false" onAction="#onDelete" prefHeight="26.0" prefWidth="106.0" text="Delete">
+                        <Button mnemonicParsing="false" onAction="#onDelete" prefHeight="26.0" prefWidth="106.0" text="Delete">
                            <VBox.margin>
                               <Insets top="25.0" />
                            </VBox.margin>

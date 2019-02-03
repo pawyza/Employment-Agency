@@ -26,7 +26,8 @@ public class LanguagesTable {
     }
 
     public void updateAdd(String language){
-        observableLanguages.add(new Language("Additional",language));
+        if(!checkIfDuplicate(language))
+            observableLanguages.add(new Language("Additional",language));
     }
 
     public boolean updateCheck(){
@@ -45,5 +46,14 @@ public class LanguagesTable {
             additionalLanguages.add(l.getLanguage());
         }
         return additionalLanguages;
+    }
+
+    private boolean checkIfDuplicate(String language){
+        for (Language l: observableLanguages ) {
+            if(l.getLanguage().equals(language)){
+                return true;
+            }
+        }
+        return false;
     }
 }

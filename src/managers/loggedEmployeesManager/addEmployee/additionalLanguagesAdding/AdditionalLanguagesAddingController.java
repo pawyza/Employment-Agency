@@ -69,6 +69,7 @@ public class AdditionalLanguagesAddingController {
             FormerPositionsAddingController formerPositionsAddingController = fxmlLoader.getController();
             formerPositionsAddingController .setConnection(connection);
             formerPositionsAddingController .setDataContainer(dataContainer);
+            formerPositionsAddingController.prepare();
             Main.stage.setScene(new Scene(root));
         } catch (IOException exception) {
             throw new RuntimeException(exception);
