@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@../../../resources/stylesheets/login.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="managers.loggedEmployeesManager.addEmployee.AddEmployeeController">
    <children>
       <VBox layoutY="49.0" prefHeight="287.0" prefWidth="600.0">
@@ -71,7 +70,7 @@
                            </HBox.margin>
                         </Text>
                         <ChoiceBox fx:id="choiceNativeLanguage" prefWidth="150.0" />
-                        <Button mnemonicParsing="false" onAction="#nextPage" prefHeight="26.0" prefWidth="131.0" text="Next">
+                        <Button mnemonicParsing="false" onAction="#next" prefHeight="26.0" prefWidth="131.0" text="Next">
                            <HBox.margin>
                               <Insets left="100.0" />
                            </HBox.margin>

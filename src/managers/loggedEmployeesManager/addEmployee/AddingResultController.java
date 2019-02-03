@@ -1,10 +1,8 @@
-package managers.loggedEmployeesManager.employ;
-
-import managers.loggedEmployeesManager.addEmployee.DataContainer;
+package managers.loggedEmployeesManager.addEmployee;
 
 import java.sql.Connection;
 
-public class EmployController {
+public class AddingResultController {
     private Connection connection;
 
     private DataContainer dataContainer;
