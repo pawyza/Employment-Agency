@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@../../../resources/stylesheets/login.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="managers.loggedEmployeesManager.addEmployee.PermissionsAddingController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@../../../../resources/stylesheets/login.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="managers.loggedEmployeesManager.addEmployee.additionalLanguagesAdding.AdditionalLanguagesAddingController">
    <children>
       <VBox layoutY="60.0" prefHeight="300.0" prefWidth="600.0">
          <children>
@@ -19,7 +19,7 @@
                <children>
                   <VBox alignment="TOP_CENTER" prefHeight="288.0" prefWidth="150.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Permission:">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Additional language:">
                            <VBox.margin>
                               <Insets top="30.0" />
                            </VBox.margin>
@@ -37,7 +37,7 @@
                               <Insets top="25.0" />
                            </VBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#show" prefHeight="26.0" prefWidth="102.0" text="Show">
+                        <Button mnemonicParsing="false" onAction="#next" prefHeight="26.0" prefWidth="102.0" text="Next">
                            <VBox.margin>
                               <Insets top="100.0" />
                            </VBox.margin>
@@ -50,13 +50,13 @@
                         <Insets />
                      </HBox.margin>
                   </VBox>
-                  <TableView fx:id="tabPermissions" prefHeight="288.0" prefWidth="461.0">
-                     <columns>
-                        <TableColumn fx:id="colPermission" prefWidth="455.20001220703125" text="Permission" />
-                     </columns>
+                  <TableView fx:id="tabLanguage" prefHeight="288.0" prefWidth="461.0">
+                    <columns>
+                        <TableColumn fx:id="colInformation" prefWidth="73.59997254610062" text="Information" />
+                      <TableColumn fx:id="colLanguage" prefWidth="387.20005798339844" text="Language" />
+                    </columns>
                   </TableView>
-               </children>
-            </HBox>
+               </children></HBox>
          </children>
       </VBox>
    </children>

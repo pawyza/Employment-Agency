@@ -1,4 +1,4 @@
-package managers.loggedEmployeesManager.addEmployee;
+package managers.loggedEmployeesManager.addEmployee.formerPositionAdding;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,6 +9,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import managers.loggedEmployeesManager.addEmployee.DataContainer;
+import managers.loggedEmployeesManager.addEmployee.permissionAdding.PermissionsAddingController;
 import startPack.Main;
 
 import java.io.IOException;
@@ -48,7 +50,7 @@ public class FormerPositionsAddingController {
     void next(ActionEvent event) {
         try {
         FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("/managers/loggedEmployeesManager/addEmployee/permissionsAddingPane.fxml"));
+        fxmlLoader.setLocation(getClass().getResource("/managers/loggedEmployeesManager/addEmployee/permissionAdding/permissionsAddingPane.fxml"));
         Parent root = fxmlLoader.load();
         PermissionsAddingController permissionsAddingController = fxmlLoader.getController();
         permissionsAddingController.setConnection(connection);

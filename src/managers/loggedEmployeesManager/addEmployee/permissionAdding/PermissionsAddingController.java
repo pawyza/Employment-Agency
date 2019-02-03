@@ -1,4 +1,4 @@
-package managers.loggedEmployeesManager.addEmployee;
+package managers.loggedEmployeesManager.addEmployee.permissionAdding;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,12 +9,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import managers.loggedEmployeesManager.addEmployee.DataContainer;
+import managers.loggedEmployeesManager.addEmployee.result.AddingResultController;
 import startPack.Main;
 
 import java.io.IOException;
 import java.sql.Connection;
 
-public class AdditionalLanguagesAddingController {
+public class PermissionsAddingController {
     private Connection connection;
 
     private DataContainer dataContainer;
@@ -25,8 +27,6 @@ public class AdditionalLanguagesAddingController {
     public void setDataContainer(DataContainer dataContainer) {
         this.dataContainer = dataContainer;
     }
-
-
     @FXML
     private ChoiceBox<?> choiceLanguage;
 
@@ -34,23 +34,20 @@ public class AdditionalLanguagesAddingController {
     private Button btnDelete;
 
     @FXML
-    private TableView<?> tabLanguage;
+    private TableView<?> tabPermissions;
 
     @FXML
-    private TableColumn<?, ?> colInformation;
+    private TableColumn<?, ?> colPermission;
 
     @FXML
-    private TableColumn<?, ?> colLanguage;
-
-    @FXML
-    void next(ActionEvent event) {
+    void show(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("/managers/loggedEmployeesManager/addEmployee/formerPositionsAddingPane.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("/managers/loggedEmployeesManager/addEmployee/result/addingResult.fxml"));
             Parent root = fxmlLoader.load();
-            FormerPositionsAddingController formerPositionsAddingController = fxmlLoader.getController();
-            formerPositionsAddingController .setConnection(connection);
-            formerPositionsAddingController .setDataContainer(dataContainer);
+            AddingResultController addingResultController = fxmlLoader.getController();
+            addingResultController.setConnection(connection);
+            addingResultController.setDataContainer(dataContainer);
             Main.stage.setScene(new Scene(root));
         } catch (IOException exception) {
             throw new RuntimeException(exception);
@@ -61,5 +58,4 @@ public class AdditionalLanguagesAddingController {
     void onDelete(ActionEvent event) {
 
     }
-
 }

@@ -1,4 +1,6 @@
-package managers.loggedEmployeesManager.addEmployee;
+package managers.loggedEmployeesManager.addEmployee.result;
+
+import managers.loggedEmployeesManager.addEmployee.DataContainer;
 
 import java.sql.Connection;
 
