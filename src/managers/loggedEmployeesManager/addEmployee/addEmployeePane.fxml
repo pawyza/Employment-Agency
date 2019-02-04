@@ -31,7 +31,7 @@
                         <Insets bottom="8.0" left="15.0" right="15.0" />
                      </HBox.margin>
                   </Text>
-                  <TextField fx:id="txtForname" prefHeight="31.0" prefWidth="115.0" promptText="forname">
+                  <TextField fx:id="txtForname" prefHeight="31.0" prefWidth="115.0" promptText="forename">
                      <HBox.margin>
                         <Insets right="15.0" />
                      </HBox.margin>

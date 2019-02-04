@@ -3,13 +3,13 @@ package managers;
 import java.sql.Connection;
 
 public class LoggedUser {
-    private Connection connection;
+    private static Connection connection;
 
     public void setConnection(Connection connection) {
         this.connection = connection;
     }
 
-    public Connection getConnection() {
+    public static Connection getConnection() {
         return connection;
     }
 }

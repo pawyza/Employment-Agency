@@ -1,35 +1,26 @@
 package managers.loggedEmployeesManager.addEmployee;
 
-import javax.swing.text.DateFormatter;
-import java.sql.Connection;
+import managers.LoggedUser;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.regex.Pattern;
 
 public class DataContainer {
     private ArrayList<String> languages = new ArrayList<>();
-    private ArrayList<String> position = new ArrayList<>();
     private ArrayList<String> trade = new ArrayList<>();
     private ArrayList<String> permissions = new ArrayList<>();
     private ArrayList<String> countries = new ArrayList<>();
-    private ArrayList<Integer> offer = new ArrayList<>();
 
-    public DataContainer(Connection connection) throws SQLException {
-        Statement statement = connection.createStatement();
+    public DataContainer() throws SQLException {
+        Statement statement = LoggedUser.getConnection().createStatement();
         ResultSet resultSet = statement.executeQuery("SELECT JEZYK FROM JEZYKI");
         while (resultSet.next()){
             languages.add(resultSet.getString("JEZYK"));
-        }
-        resultSet = statement.executeQuery("SELECT STANOWISKO FROM STANOWISKA");
-        while (resultSet.next()){
-            position.add(resultSet.getString("STANOWISKO"));
         }
         resultSet = statement.executeQuery("SELECT BRANZA FROM BRANZE");
         while (resultSet.next()){
@@ -43,18 +34,10 @@ public class DataContainer {
         while (resultSet.next()){
             permissions.add(resultSet.getString("NAZWA_UPRAWNIENIA"));
         }
-        resultSet = statement.executeQuery("SELECT ID_OFERTY FROM OFERTY");
-        while (resultSet.next()){
-            offer.add(resultSet.getInt("ID_OFERTY"));
-        }
     }
 
     public ArrayList<String> getLanguages() {
         return languages;
-    }
-
-    public ArrayList<String> getPosition() {
-        return position;
     }
 
     public ArrayList<String> getTrade() {
@@ -68,16 +51,11 @@ public class DataContainer {
     public ArrayList<String> getCountries() {
         return countries;
     }
-
-    public ArrayList<Integer> getOffer() {
-        return offer;
-    }
-
     //Informations to add
 
     private String name;
-    private String forname;
-    private int number;
+    private String forename;
+    private long number;
     private String birthDate;
     private String country;
     private String nativeLanguage;
@@ -95,21 +73,21 @@ public class DataContainer {
         }
     }
 
-    public String getForname() {
-        return forname;
+    public String getForename() {
+        return forename;
 
     }
 
-    public void setForname(String forname) throws IllegalArgumentException{
-        if(forname.length()<=30 && forname.length()!=0 && !Pattern.compile( "[0-9]" ).matcher(forname).find()) {
-        this.forname = forname;
+    public void setForename(String forename) throws IllegalArgumentException{
+        if(forename.length()<=30 && forename.length()!=0 && !Pattern.compile( "[0-9]" ).matcher(forename).find()) {
+        this.forename = forename;
         }
         else {
             throw new IllegalArgumentException();
         }
     }
 
-    public int getNumber() {
+    public long getNumber() {
         return number;
     }
 
@@ -129,7 +107,7 @@ public class DataContainer {
 
     public void setBirthDate(LocalDate birthDate) throws IllegalArgumentException {
         if (birthDate.isAfter(LocalDate.of(1920,1,1)) && birthDate.isBefore(LocalDate.of(2005,1,1))){
-        this.birthDate = birthDate.format(DateTimeFormatter.ofPattern("YYYY/MM/dd"));
+        this.birthDate = birthDate.format(DateTimeFormatter.ofPattern("MM/dd/YYYY"));
         } else {
             throw new IllegalArgumentException();
         }
@@ -159,7 +137,7 @@ public class DataContainer {
         }
     }
 
-    private ArrayList<String> additionalLanguages;
+    private ArrayList<String> additionalLanguages = new ArrayList<>();
 
     public ArrayList<String> getAdditionalLanguages() {
         return additionalLanguages;
@@ -169,7 +147,7 @@ public class DataContainer {
         this.additionalLanguages = additionalLanguages;
     }
 
-    private ArrayList<String> formerPositions;
+    private ArrayList<String> formerPositions = new ArrayList<>();
 
     public ArrayList<String> getFormerPositions() {
         return formerPositions;
@@ -179,4 +157,13 @@ public class DataContainer {
         this.formerPositions = formerPositions;
     }
 
+    private ArrayList<String> employeePermissions = new ArrayList<>();
+
+    public ArrayList<String> getEmployeePermissions() {
+        return employeePermissions;
+    }
+
+    public void setEmployeePermissions(ArrayList<String> employeePermissions) {
+        this.employeePermissions = employeePermissions;
+    }
 }

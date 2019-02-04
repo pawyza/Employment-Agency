@@ -14,22 +14,17 @@ import managers.loggedEmployeesManager.addEmployee.additionalLanguagesAdding.Add
 import startPack.Main;
 
 import java.io.IOException;
-import java.sql.Connection;
 import java.sql.SQLException;
+import java.time.LocalDate;
 
 public class AddEmployeeController {
-    private Connection connection;
-
     private DataContainer dataContainer;
-    public void setConnection(Connection connection) {
-        this.connection = connection;
-    }
-
     public void prepare(){
         try {
-            dataContainer = new DataContainer(connection);
+            dataContainer = new DataContainer();
             choiceCountry.setItems(FXCollections.observableList(dataContainer.getCountries()));
             choiceNativeLanguage.setItems(FXCollections.observableList(dataContainer.getLanguages()));
+            dateBirthDate.setValue(LocalDate.of(2000,1,1));
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("Error while loading data");
@@ -62,7 +57,7 @@ public class AddEmployeeController {
         try {
             dataContainer.setBirthDate(dateBirthDate.getValue());
             dataContainer.setCountry(choiceCountry.getValue());
-            dataContainer.setForname(txtForname.getText());
+            dataContainer.setForename(txtForname.getText());
             dataContainer.setName(txtName.getText());
             dataContainer.setNativeLanguage(choiceNativeLanguage.getValue());
             dataContainer.setNumber(txtNumber.getText());
@@ -71,7 +66,6 @@ public class AddEmployeeController {
             fxmlLoader.setLocation(getClass().getResource("/managers/loggedEmployeesManager/addEmployee/additionalLanguagesAdding/additionalLanguagesAddingPane.fxml"));
             Parent root = fxmlLoader.load();
             AdditionalLanguagesAddingController additionalLanguagesAddingController = fxmlLoader.getController();
-            additionalLanguagesAddingController.setConnection(connection);
             additionalLanguagesAddingController.setDataContainer(dataContainer);
             additionalLanguagesAddingController.prepare();
             Main.stage.setScene(new Scene(root));

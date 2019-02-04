@@ -6,6 +6,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
 public class LanguagesTable {
@@ -34,7 +35,7 @@ public class LanguagesTable {
         return observableLanguages.size() > 1;
     }
 
-    public void updateRemove(Language language){
+    public void updateRemove(Language language) throws RuntimeException {
         if(!language.getInformation().equals("Native"))
         observableLanguages.remove(observableLanguages.indexOf(language));
     }

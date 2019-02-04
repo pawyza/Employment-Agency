@@ -9,25 +9,20 @@ import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import managers.LoggedUser;
 import managers.loggedEmployeesManager.addEmployee.DataContainer;
 import managers.loggedEmployeesManager.addEmployee.permissionAdding.PermissionsAddingController;
 import startPack.Main;
 
 import java.io.IOException;
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
 public class FormerPositionsAddingController {
-    private Connection connection;
     private DataContainer dataContainer;
     private PositionsTable positionTable;
-
-    public void setConnection(Connection connection) {
-        this.connection = connection;
-    }
 
     public void setDataContainer(DataContainer dataContainer) {
         this.dataContainer = dataContainer;
@@ -68,7 +63,6 @@ public class FormerPositionsAddingController {
             fxmlLoader.setLocation(getClass().getResource("/managers/loggedEmployeesManager/addEmployee/permissionAdding/permissionsAddingPane.fxml"));
             Parent root = fxmlLoader.load();
             PermissionsAddingController permissionsAddingController = fxmlLoader.getController();
-            permissionsAddingController.setConnection(connection);
             permissionsAddingController.setDataContainer(dataContainer);
             permissionsAddingController.prepare();
             Main.stage.setScene(new Scene(root));
@@ -79,13 +73,17 @@ public class FormerPositionsAddingController {
 
     @FXML
     void onDelete(ActionEvent event) {
+        try {
         positionTable.updateRemove(tabPosition.getSelectionModel().getSelectedItem());
+        }catch (RuntimeException e){
+        System.out.println("Brak wybranego elementu");
+    }
     }
 
     private void preparePositions(String trade) {
         ArrayList<String> positions = new ArrayList<>();
         try {
-            Statement statement = connection.createStatement();
+            Statement statement = LoggedUser.getConnection().createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT STANOWISKO FROM STANOWISKO_PELNE WHERE BRANZA='"+trade+"'");
             while (resultSet.next()){
                 positions.add(resultSet.getString("STANOWISKO"));

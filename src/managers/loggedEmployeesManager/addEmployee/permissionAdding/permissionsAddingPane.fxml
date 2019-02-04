@@ -27,12 +27,12 @@
                               <Font size="15.0" />
                            </font>
                         </Text>
-                        <ChoiceBox fx:id="choiceLanguage" prefHeight="26.0" prefWidth="144.0">
+                        <ChoiceBox fx:id="choicePermission" prefHeight="26.0" prefWidth="144.0">
                            <VBox.margin>
                               <Insets />
                            </VBox.margin>
                         </ChoiceBox>
-                        <Button fx:id="btnDelete" disable="true" mnemonicParsing="false" onAction="#onDelete" prefHeight="26.0" prefWidth="106.0" text="Delete">
+                        <Button mnemonicParsing="false" onAction="#onDelete" prefHeight="26.0" prefWidth="106.0" text="Delete">
                            <VBox.margin>
                               <Insets top="25.0" />
                            </VBox.margin>

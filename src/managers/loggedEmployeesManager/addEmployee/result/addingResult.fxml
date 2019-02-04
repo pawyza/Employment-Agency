@@ -1,8 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@../../../../resources/stylesheets/login.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="managers.loggedEmployeesManager.addEmployee.result.AddingResultController">
-
+   <children>
+      <VBox layoutX="100.0" layoutY="75.0" prefHeight="222.0" prefWidth="400.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name:">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fx:id="txtName" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Forname:">
+                     <HBox.margin>
+                        <Insets left="50.0" right="10.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fx:id="txtForename" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Brith date:">
+                     <HBox.margin>
+                        <Insets left="40.0" right="10.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fx:id="txtBirthDate" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Country:">
+                     <HBox.margin>
+                        <Insets left="40.0" right="10.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fx:id="txtCountry" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Natvie language:">
+                     <HBox.margin>
+                        <Insets left="40.0" right="10.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fx:id="txtNativeLanguage" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Phone number:">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fx:id="txtPhone" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Additional languages:">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fx:id="txtLanguages" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Former positions:">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fx:id="txtFormerPositions" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="400.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Permissions:">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fx:id="txtPermission" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#onAdd" text="Add" />
+                  <Button mnemonicParsing="false" onAction="#onAbort" text="Abort" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
 </AnchorPane>

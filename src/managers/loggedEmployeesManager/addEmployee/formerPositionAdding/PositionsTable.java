@@ -28,7 +28,7 @@ public class PositionsTable {
         if(!checkIfDuplicate(position,trade))
         observablePosition.add(new Positions(position,trade));
     }
-    public void updateRemove(Positions position){
+    public void updateRemove(Positions position) throws RuntimeException{
             observablePosition.remove(observablePosition.indexOf(position));
     }
 

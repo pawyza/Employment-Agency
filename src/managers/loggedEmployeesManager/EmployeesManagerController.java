@@ -25,7 +25,6 @@ public class EmployeesManagerController extends LoggedUser {
             fxmlLoader.setLocation(getClass().getResource("/managers/loggedEmployeesManager/addEmployee/addEmployeePane.fxml"));
             Parent root = fxmlLoader.load();
             AddEmployeeController addEmployeeController = fxmlLoader.getController();
-            addEmployeeController.setConnection(super.getConnection());
             addEmployeeController.prepare();
             Main.stage.setScene(new Scene(root));
         } catch (IOException exception) {
@@ -40,7 +39,6 @@ public class EmployeesManagerController extends LoggedUser {
             fxmlLoader.setLocation(getClass().getResource("/managers/loggedEmployeesManager/browseEmployees/browseEmployeesPane.fxml"));
             Parent root = fxmlLoader.load();
             BrowseEmployeesController browseEmployeesController = fxmlLoader.getController();
-            browseEmployeesController.setConnection(super.getConnection());
             Main.stage.setScene(new Scene(root));
         } catch (IOException exception) {
             throw new RuntimeException(exception);
@@ -54,7 +52,6 @@ public class EmployeesManagerController extends LoggedUser {
             fxmlLoader.setLocation(getClass().getResource("/managers/loggedEmployeesManager/browseOffers/BrowseOffersController.fxml"));
             Parent root = fxmlLoader.load();
             BrowseOffersController browseOffersController = fxmlLoader.getController();
-            browseOffersController.setConnection(super.getConnection());
             Main.stage.setScene(new Scene(root));
         } catch (IOException exception) {
             throw new RuntimeException(exception);
@@ -68,7 +65,6 @@ public class EmployeesManagerController extends LoggedUser {
             fxmlLoader.setLocation(getClass().getResource("/managers/loggedEmployeesManager/employ/employPane.fxml"));
             Parent root = fxmlLoader.load();
             EmployController employController = fxmlLoader.getController();
-            employController.setConnection(super.getConnection());
             Main.stage.setScene(new Scene(root));
         } catch (IOException exception) {
             throw new RuntimeException(exception);

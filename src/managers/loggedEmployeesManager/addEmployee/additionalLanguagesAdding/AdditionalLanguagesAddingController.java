@@ -19,13 +19,8 @@ import java.sql.Connection;
 import java.util.ArrayList;
 
 public class AdditionalLanguagesAddingController {
-    private Connection connection;
     private DataContainer dataContainer;
     private LanguagesTable languagesTable;
-
-    public void setConnection(Connection connection) {
-        this.connection = connection;
-    }
 
     public void setDataContainer(DataContainer dataContainer) {
         this.dataContainer = dataContainer;
@@ -34,8 +29,8 @@ public class AdditionalLanguagesAddingController {
     public void prepare(){
         choiceLanguage.setItems(FXCollections.observableList(dataContainer.getLanguages()));
         languagesTable = new LanguagesTable(tabLanguage,colInformation,colLanguage,dataContainer.getNativeLanguage());
-        choiceLanguage.getSelectionModel().selectedIndexProperty().addListener((observableValue, number, t1) -> {
-            languagesTable.updateAdd(dataContainer.getLanguages().get(t1.intValue()));
+        choiceLanguage.getSelectionModel().selectedItemProperty().addListener((observableValue, number, t1) -> {
+            languagesTable.updateAdd(choiceLanguage.getValue());
             if(languagesTable.updateCheck()){
                 btnDelete.setDisable(false);
             }});
@@ -67,7 +62,6 @@ public class AdditionalLanguagesAddingController {
             fxmlLoader.setLocation(getClass().getResource("/managers/loggedEmployeesManager/addEmployee/formerPositionAdding/formerPositionsAddingPane.fxml"));
             Parent root = fxmlLoader.load();
             FormerPositionsAddingController formerPositionsAddingController = fxmlLoader.getController();
-            formerPositionsAddingController .setConnection(connection);
             formerPositionsAddingController .setDataContainer(dataContainer);
             formerPositionsAddingController.prepare();
             Main.stage.setScene(new Scene(root));
@@ -78,9 +72,12 @@ public class AdditionalLanguagesAddingController {
 
     @FXML
     void onDelete(ActionEvent event) {
+        try {
         languagesTable.updateRemove(tabLanguage.getSelectionModel().getSelectedItem());
         if(!languagesTable.updateCheck()){
             btnDelete.setDisable(true);
+        }}catch (RuntimeException e){
+            System.out.println("Brak wybranego elementu");
         }
     }
 
