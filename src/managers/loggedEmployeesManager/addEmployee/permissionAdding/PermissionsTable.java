@@ -29,7 +29,7 @@ public class PermissionsTable {
     }
 
     public void updateRemove(String permission) throws RuntimeException{
-            observablePermissions.remove(observablePermissions.indexOf(permission));
+            observablePermissions.remove(permission);
     }
 
     public ArrayList<String> getPermissions(){

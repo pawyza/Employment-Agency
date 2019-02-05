@@ -55,7 +55,7 @@
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#addCurencyClicked" text="Add currency">
+                  <Button mnemonicParsing="false" onAction="#addCurrencyClicked" text="Add currency">
                      <font>
                         <Font size="15.0" />
                      </font>

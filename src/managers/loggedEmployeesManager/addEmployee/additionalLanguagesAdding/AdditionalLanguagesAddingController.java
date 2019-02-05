@@ -47,10 +47,10 @@ public class AdditionalLanguagesAddingController {
     private TableView<Language> tabLanguage;
 
     @FXML
-    private TableColumn<Language, ArrayList<String>> colInformation;
+    private TableColumn<Language, String> colInformation;
 
     @FXML
-    private TableColumn<Language, ArrayList<String>> colLanguage;
+    private TableColumn<Language, String> colLanguage;
 
 
 

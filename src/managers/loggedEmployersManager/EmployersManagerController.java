@@ -3,7 +3,7 @@ package managers.loggedEmployersManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import managers.LoggedUser;
-import managers.OutLogger;
+import managers.Switcher;
 
 public class EmployersManagerController extends LoggedUser {
 
@@ -29,6 +29,6 @@ public class EmployersManagerController extends LoggedUser {
 
     @FXML
     void onLogOut(ActionEvent event) {
-        new OutLogger().LogOut();
+        new Switcher().logOut();
     }
 }

@@ -50,10 +50,10 @@ public class FormerPositionsAddingController {
     private TableView<Positions> tabPosition;
 
     @FXML
-    private TableColumn<Positions, ArrayList<String>> colPosition;
+    private TableColumn<Positions, String> colPosition;
 
     @FXML
-    private TableColumn<Positions, ArrayList<String>> colTrade;
+    private TableColumn<Positions, String> colTrade;
 
     @FXML
     void next(ActionEvent event) {

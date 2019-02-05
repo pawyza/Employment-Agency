@@ -7,7 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import managers.LoggedUser;
-import managers.OutLogger;
+import managers.Switcher;
 import managers.loggedEmployeesManager.addEmployee.AddEmployeeController;
 import managers.loggedEmployeesManager.browseEmployees.BrowseEmployeesController;
 import managers.loggedEmployeesManager.browseOffers.BrowseOffersController;
@@ -60,6 +60,6 @@ public class EmployeesManagerController extends LoggedUser {
 
     @FXML
     void onLogOut(ActionEvent event) {
-        new OutLogger().LogOut();
+        new Switcher().logOut();
     }
 }

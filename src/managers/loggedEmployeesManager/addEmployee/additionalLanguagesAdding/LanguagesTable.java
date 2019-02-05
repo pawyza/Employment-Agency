@@ -12,11 +12,11 @@ import java.util.ArrayList;
 public class LanguagesTable {
 
     private TableView<Language> tabLanguage;
-    private TableColumn<Language, ArrayList<String>> colInformation;
-    private TableColumn<Language, ArrayList<String>> colLanguage;
+    private TableColumn<Language, String> colInformation;
+    private TableColumn<Language, String> colLanguage;
     private ObservableList<Language> observableLanguages = FXCollections.observableArrayList();
 
-    public LanguagesTable(TableView<Language> tableView, TableColumn<Language, ArrayList<String>> colInformation, TableColumn<Language, ArrayList<String>>  colLanguage, String nativeLan) {
+    public LanguagesTable(TableView<Language> tableView, TableColumn<Language, String> colInformation, TableColumn<Language, String>  colLanguage, String nativeLan) {
         this.tabLanguage = tableView;
         this.colInformation = colInformation;
         this.colLanguage = colLanguage;
@@ -37,7 +37,7 @@ public class LanguagesTable {
 
     public void updateRemove(Language language) throws RuntimeException {
         if(!language.getInformation().equals("Native"))
-        observableLanguages.remove(observableLanguages.indexOf(language));
+        observableLanguages.remove(language);
     }
 
     public ArrayList<String> getAdditionalLanguages(){

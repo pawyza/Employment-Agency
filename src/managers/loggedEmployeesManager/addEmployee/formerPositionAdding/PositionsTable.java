@@ -11,11 +11,11 @@ import java.util.ArrayList;
 public class PositionsTable {
 
     private TableView<Positions> tabPositions;
-    private TableColumn<Positions, ArrayList<String>> colPosition;
-    private TableColumn<Positions, ArrayList<String>> colTrade;
+    private TableColumn<Positions, String> colPosition;
+    private TableColumn<Positions, String> colTrade;
     private ObservableList<Positions> observablePosition = FXCollections.observableArrayList();
 
-    public PositionsTable(TableView<Positions> tableView, TableColumn<Positions, ArrayList<String>> colPosition, TableColumn<Positions, ArrayList<String>>  colTrade) {
+    public PositionsTable(TableView<Positions> tableView, TableColumn<Positions, String> colPosition, TableColumn<Positions, String>  colTrade) {
         this.tabPositions = tableView;
         this.colPosition = colPosition;
         this.colTrade = colTrade;
@@ -29,7 +29,7 @@ public class PositionsTable {
         observablePosition.add(new Positions(position,trade));
     }
     public void updateRemove(Positions position) throws RuntimeException{
-            observablePosition.remove(observablePosition.indexOf(position));
+            observablePosition.remove(position);
     }
 
     public ArrayList<String> getPositions(){
