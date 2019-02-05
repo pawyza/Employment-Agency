@@ -7,10 +7,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import managers.LoggedUser;
+import managers.OutLogger;
 import managers.loggedEmployeesManager.addEmployee.AddEmployeeController;
 import managers.loggedEmployeesManager.browseEmployees.BrowseEmployeesController;
 import managers.loggedEmployeesManager.browseOffers.BrowseOffersController;
-import managers.loggedEmployeesManager.employ.EmployController;
 import startPack.Main;
 
 import java.io.IOException;
@@ -59,17 +59,7 @@ public class EmployeesManagerController extends LoggedUser {
     }
 
     @FXML
-    void employClicked(ActionEvent event) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("/managers/loggedEmployeesManager/employ/employPane.fxml"));
-            Parent root = fxmlLoader.load();
-            EmployController employController = fxmlLoader.getController();
-            Main.stage.setScene(new Scene(root));
-        } catch (IOException exception) {
-            throw new RuntimeException(exception);
-        }
+    void onLogOut(ActionEvent event) {
+        new OutLogger().LogOut();
     }
-
-
 }

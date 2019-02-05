@@ -33,14 +33,6 @@
             </HBox>
             <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#employClicked" text="Employ">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="40.0" right="10.0" />
-                     </HBox.margin>
-                  </Button>
                   <Button mnemonicParsing="false" onAction="#browseOffersClicked" text="Browse offers">
                      <font>
                         <Font size="15.0" />
@@ -53,5 +45,10 @@
             </HBox>
          </children>
       </VBox>
+      <Button alignment="CENTER" layoutX="520.0" layoutY="354.0" mnemonicParsing="false" onAction="#onLogOut" text="Log out">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
