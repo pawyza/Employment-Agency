@@ -1,6 +1,14 @@
 .background {
+     -fx-background-color: transparent;
+     -fx-background-image: url('/resources/images/loginBG.jpg');
+     -fx-background-size: stretch;
+     -fx-background-repeat: no-repeat;
+     -fx-background-position: 50%;
+ }
+
+.cv {
     -fx-background-color: transparent;
-    -fx-background-image: url('/resources/images/loginBG.jpg');
+    -fx-background-image: url('/resources/images/cv.jpg');
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: 50%;

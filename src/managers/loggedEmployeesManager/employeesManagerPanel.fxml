@@ -45,7 +45,7 @@
             </HBox>
          </children>
       </VBox>
-      <Button alignment="CENTER" layoutX="520.0" layoutY="354.0" mnemonicParsing="false" onAction="#onLogOut" text="Log out">
+      <Button alignment="CENTER" layoutX="514.0" layoutY="354.0" mnemonicParsing="false" onAction="#onLogOut" prefHeight="30.0" prefWidth="71.0" text="Log out">
          <font>
             <Font size="15.0" />
          </font>

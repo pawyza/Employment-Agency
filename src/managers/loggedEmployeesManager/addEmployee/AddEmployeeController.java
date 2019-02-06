@@ -10,6 +10,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import managers.Switcher;
 import managers.loggedEmployeesManager.addEmployee.additionalLanguagesAdding.AdditionalLanguagesAddingController;
 import startPack.Main;
 
@@ -69,7 +70,7 @@ public class AddEmployeeController {
             additionalLanguagesAddingController.setDataContainer(dataContainer);
             additionalLanguagesAddingController.prepare();
             Main.stage.setScene(new Scene(root));
-        } catch (IllegalArgumentException e){
+        } catch (RuntimeException e){
             errorMessage.setText("Check if all values are correct");
             System.out.println("Blad podczas zapisywania wartosci.");
             e.printStackTrace();
@@ -77,6 +78,11 @@ public class AddEmployeeController {
             System.out.println("Blad podczas otwierania nowej strony.");
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    void onReturn(ActionEvent event) {
+        new Switcher().change("/managers/loggedEmployeesManager/employeesManagerPanel.fxml");
     }
 
 }

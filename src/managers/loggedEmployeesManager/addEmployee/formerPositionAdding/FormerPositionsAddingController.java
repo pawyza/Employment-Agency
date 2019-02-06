@@ -91,7 +91,6 @@ public class FormerPositionsAddingController {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        if(!positions.isEmpty())
         choicePosition.setItems(FXCollections.observableList(positions));
     }
 }
