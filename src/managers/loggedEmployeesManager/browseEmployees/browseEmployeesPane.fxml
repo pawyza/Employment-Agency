@@ -54,14 +54,15 @@
                         <Insets />
                      </HBox.margin>
                   </VBox>
-                  <TableView fx:id="tabEmployees" prefHeight="462.0" prefWidth="738.0">
+                  <TableView fx:id="tabEmployees" prefHeight="462.0" prefWidth="806.0">
                      <columns>
-                        <TableColumn fx:id="colName" prefWidth="99.99996793270111" text="Name" />
-                        <TableColumn fx:id="colForname" prefWidth="97.60004425048828" text="Forname" />
-                        <TableColumn fx:id="colCoutry" prefWidth="103.199951171875" text="Country" />
-                        <TableColumn fx:id="colLanguages" prefWidth="148.00003051757812" text="Languages" />
-                        <TableColumn fx:id="colPermission" minWidth="0.0" prefWidth="147.19992065429688" text="Permission" />
-                        <TableColumn fx:id="colFormerPostition" minWidth="0.0" prefWidth="150.4000244140625" text="Former positions" />
+                        <TableColumn fx:id="colID" prefWidth="43.99996793270111" text="Id" />
+                        <TableColumn fx:id="colName" prefWidth="105.5999755859375" text="Name" />
+                        <TableColumn fx:id="colForname" prefWidth="97.60003662109375" text="Forname" />
+                        <TableColumn fx:id="colCoutry" prefWidth="99.99993896484375" text="Country" />
+                        <TableColumn fx:id="colLanguages" prefWidth="135.20004272460938" text="Languages" />
+                        <TableColumn fx:id="colPermission" minWidth="0.0" prefWidth="148.79998779296875" text="Permission" />
+                        <TableColumn fx:id="colFormerPostition" minWidth="0.0" prefWidth="124.0" text="Former positions" />
                      </columns>
                   </TableView>
                </children>

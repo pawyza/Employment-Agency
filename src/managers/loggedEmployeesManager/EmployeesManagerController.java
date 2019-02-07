@@ -49,7 +49,7 @@ public class EmployeesManagerController extends LoggedUser {
     void browseOffersClicked(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("/managers/loggedEmployeesManager/browseOffers/BrowseOffersController.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("/managers/loggedEmployeesManager/browseOffers/browseOffersPane.fxml"));
             Parent root = fxmlLoader.load();
             BrowseOffersController browseOffersController = fxmlLoader.getController();
             Main.stage.setScene(new Scene(root));

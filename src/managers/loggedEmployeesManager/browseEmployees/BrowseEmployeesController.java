@@ -25,7 +25,7 @@ public class BrowseEmployeesController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-            browseEmployeeTable = new BrowseEmployeeTable(tabEmployees,colName,colForname,colCoutry,colLanguages,colPermission,colFormerPostition);
+            browseEmployeeTable = new BrowseEmployeeTable(tabEmployees,colID,colName,colForname,colCoutry,colLanguages,colPermission,colFormerPostition);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -54,6 +54,10 @@ public class BrowseEmployeesController implements Initializable {
 
     @FXML
     private TableColumn<EmployeeObject, String> colFormerPostition;
+
+    @FXML
+    private TableColumn<EmployeeObject, Integer> colID;
+
 
 
     @FXML

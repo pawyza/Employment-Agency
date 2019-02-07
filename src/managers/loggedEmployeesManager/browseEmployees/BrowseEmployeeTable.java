@@ -20,6 +20,7 @@ import java.util.ArrayList;
 public class BrowseEmployeeTable {
 
     private TableView<EmployeeObject> tabEmployees;
+    private TableColumn<EmployeeObject,Integer>  colID;
     private TableColumn<EmployeeObject, String> colName;
     private TableColumn<EmployeeObject, String> colForname;
     private TableColumn<EmployeeObject, String> colCoutry;
@@ -28,7 +29,8 @@ public class BrowseEmployeeTable {
     private TableColumn<EmployeeObject, String> colFormerPostition;
     private ObservableList<EmployeeObject> objectObservableList = FXCollections.observableArrayList();
 
-    public BrowseEmployeeTable(TableView<EmployeeObject> tabEmployees, TableColumn<EmployeeObject, String> colName, TableColumn<EmployeeObject, String> colForname, TableColumn<EmployeeObject, String> colCoutry, TableColumn<EmployeeObject, String> colLanguages, TableColumn<EmployeeObject, String> colPermission, TableColumn<EmployeeObject, String> colFormerPostition) throws SQLException {
+    public BrowseEmployeeTable(TableView<EmployeeObject> tabEmployees, TableColumn<EmployeeObject,Integer>  colID, TableColumn<EmployeeObject, String> colName, TableColumn<EmployeeObject, String> colForname, TableColumn<EmployeeObject, String> colCoutry, TableColumn<EmployeeObject, String> colLanguages, TableColumn<EmployeeObject, String> colPermission, TableColumn<EmployeeObject, String> colFormerPostition) throws SQLException {
+        this.colID = colID;
         this.tabEmployees = tabEmployees;
         this.colName = colName;
         this.colForname = colForname;
@@ -36,6 +38,7 @@ public class BrowseEmployeeTable {
         this.colLanguages = colLanguages;
         this.colPermission = colPermission;
         this.colFormerPostition = colFormerPostition;
+        this.colID.setCellValueFactory(new PropertyValueFactory<>("id"));
         this.colName.setCellValueFactory(new PropertyValueFactory<>("name"));
         this.colForname.setCellValueFactory(new PropertyValueFactory<>("forename"));
         this.colCoutry.setCellValueFactory(new PropertyValueFactory<>("country"));
