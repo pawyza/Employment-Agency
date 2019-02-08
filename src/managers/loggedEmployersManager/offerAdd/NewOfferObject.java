@@ -9,7 +9,7 @@ public class NewOfferObject {
     private String country;
     private String city;
     private String offerType;
-    private String vacancy;
+    private int vacancy;
     private BigDecimal salary;
     private String currency;
     private ArrayList<String> details;
@@ -45,8 +45,9 @@ public class NewOfferObject {
     }
 
     public void setCity(String city) throws IllegalArgumentException{
-        if(city.equals("")){
-        this.city = city;}
+        if(!city.equals("")){
+            this.city = city.toUpperCase();
+        }
         else {
             throw new IllegalArgumentException();
         }
@@ -60,11 +61,11 @@ public class NewOfferObject {
         this.offerType = offerType;
     }
 
-    public String getVacancy() {
+    public int getVacancy() {
         return vacancy;
     }
 
-    public void setVacancy(String vacancy) {
+    public void setVacancy(int vacancy) {
         this.vacancy = vacancy;
     }
 

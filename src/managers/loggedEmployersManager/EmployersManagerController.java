@@ -20,7 +20,7 @@ public class EmployersManagerController extends LoggedUser {
 
     @FXML
     void addOfferClicked(ActionEvent event) {
-
+        new Switcher().change("/managers/loggedEmployersManager/offerAdd/offerAddPane.fxml");
     }
 
     @FXML
