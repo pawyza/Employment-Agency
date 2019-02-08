@@ -9,25 +9,21 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="590.0" prefWidth="900.0" styleClass="background" stylesheets="@../../../resources/stylesheets/login.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="managers.loggedEmployeesManager.browseOffers.BrowseOffersController">
+
+<AnchorPane prefHeight="590.0" prefWidth="900.0" styleClass="background" stylesheets="@../../../resources/stylesheets/login.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="managers.loggedEmployersManager.employersBrowser.EmployerBrowseController">
    <children>
-      <VBox layoutX="10.0" layoutY="60.0" prefHeight="470.0" prefWidth="900.0">
+      <VBox layoutY="50.0" prefHeight="470.0" prefWidth="900.0">
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="462.0" prefWidth="901.0">
                <children>
                   <VBox alignment="TOP_CENTER" prefHeight="288.0" prefWidth="150.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#onFullInformation" prefHeight="26.0" prefWidth="106.0" text="Full Information">
-                           <VBox.margin>
-                              <Insets top="25.0" />
-                           </VBox.margin>
-                        </Button>
                         <Button mnemonicParsing="false" onAction="#onFindBy" prefHeight="26.0" prefWidth="106.0" text="Find by">
                            <VBox.margin>
                               <Insets top="25.0" />
                            </VBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#onFitTo" prefHeight="26.0" prefWidth="106.0" text="Fit to employee">
+                        <Button mnemonicParsing="false" onAction="#onDelete" prefHeight="26.0" prefWidth="106.0" text="Delete">
                            <VBox.margin>
                               <Insets top="25.0" />
                            </VBox.margin>
@@ -45,20 +41,20 @@
                         <Insets />
                      </HBox.margin>
                   </VBox>
-                  <TableView fx:id="tabOffers" prefHeight="462.0" prefWidth="738.0">
+                  <TableView fx:id="tabEmployers" prefHeight="462.0" prefWidth="738.0">
                      <columns>
-                        <TableColumn fx:id="colID" prefWidth="55.999998450279236" text="Id" />
-                        <TableColumn fx:id="colPosition" prefWidth="135.1999740600586" text="Position" />
-                        <TableColumn fx:id="colCompanyName" prefWidth="156.800048828125" text="Company name" />
-                        <TableColumn fx:id="colCountry" prefWidth="136.79998779296875" text="Country" />
-                        <TableColumn fx:id="colCity" minWidth="0.0" prefWidth="167.99990844726562" text="City" />
-                        <TableColumn fx:id="colVacancy" minWidth="0.0" prefWidth="87.2000732421875" text="Vacancy" />
+                        <TableColumn fx:id="colID" prefWidth="29.600006461143494" text="Id" />
+                        <TableColumn fx:id="colName" prefWidth="173.5999813079834" text="Name" />
+                        <TableColumn fx:id="colCountry" prefWidth="118.4000244140625" text="Country" />
+                        <TableColumn fx:id="colNumber" prefWidth="122.40005493164062" text="Number" />
+                        <TableColumn fx:id="colMail" minWidth="0.0" prefWidth="195.99990844726562" text="E-mail" />
+                        <TableColumn fx:id="colIDNumber" minWidth="0.0" prefWidth="104.0001220703125" text="ID number" />
                      </columns>
                   </TableView>
                </children>
             </HBox>
          </children>
       </VBox>
-      <Button layoutX="825.0" layoutY="557.0" mnemonicParsing="false" onAction="#onReturn" text="Return" />
+      <Button layoutX="834.0" layoutY="550.0" mnemonicParsing="false" onAction="#onReturn" text="Return" />
    </children>
 </AnchorPane>

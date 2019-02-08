@@ -9,8 +9,6 @@ import javafx.scene.Scene;
 import managers.LoggedUser;
 import managers.Switcher;
 import managers.loggedEmployeesManager.addEmployee.AddEmployeeController;
-import managers.loggedEmployeesManager.browseEmployees.BrowseEmployeesController;
-import managers.loggedEmployeesManager.browseOffers.BrowseOffersController;
 import startPack.Main;
 
 import java.io.IOException;
@@ -34,28 +32,14 @@ public class EmployeesManagerController extends LoggedUser {
 
     @FXML
     void browseEmployeesClicked(ActionEvent event) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("/managers/loggedEmployeesManager/browseEmployees/browseEmployeesPane.fxml"));
-            Parent root = fxmlLoader.load();
-            BrowseEmployeesController browseEmployeesController = fxmlLoader.getController();
-            Main.stage.setScene(new Scene(root));
-        } catch (IOException exception) {
-            throw new RuntimeException(exception);
-        }
+        new Switcher().change("/managers/loggedEmployeesManager/browseEmployees/browseEmployeesPane.fxml");
     }
+
 
     @FXML
     void browseOffersClicked(ActionEvent event) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("/managers/loggedEmployeesManager/browseOffers/browseOffersPane.fxml"));
-            Parent root = fxmlLoader.load();
-            BrowseOffersController browseOffersController = fxmlLoader.getController();
-            Main.stage.setScene(new Scene(root));
-        } catch (IOException exception) {
-            throw new RuntimeException(exception);
-        }
+        new Switcher().change(("/managers/offerBrowser/basic/browseOffersPane.fxml"));
+
     }
 
     @FXML

@@ -1,4 +1,4 @@
-package managers.loggedEmployeesManager.browseOffers;
+package managers.offerBrowser;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -15,11 +15,9 @@ public class OfferObject {
     private BigDecimal salary;
     private String currency;
     private ArrayList<String> languages;
-    private String languagesRecord;
     private ArrayList<String> details;
-    private String detailsRecord;
     private ArrayList<String> permissions;
-    private String permissionsRecord;
+    private ArrayList<Integer> employeesID;
 
     public int getId() {
         return id;
@@ -125,15 +123,24 @@ public class OfferObject {
         this.permissions = permissions;
     }
 
-    public String getLanguagesRecord() {
-        return languagesRecord;
+    public String getEmployeesID() {
+        StringBuilder sb = new StringBuilder();
+        int i = 0;
+        for (int s:employeesID) {
+            sb.append(s+", ");
+            if(sb.length()>20*i){
+                sb.append("\n");
+                i++;
+            }
+        }
+        if(sb.length()>0)
+            sb.delete(sb.length()-2,sb.length());
+        else
+            sb.append("BRAK");
+        return sb.toString();
     }
 
-    public String getDetailsRecord() {
-        return detailsRecord;
-    }
-
-    public String getPermissionsRecord() {
-        return permissionsRecord;
+    public void setEmployeesID(ArrayList<Integer> employeesID) {
+        this.employeesID = employeesID;
     }
 }

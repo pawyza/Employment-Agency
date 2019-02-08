@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="590.0" prefWidth="900.0" styleClass="background" stylesheets="@../../../resources/stylesheets/login.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="managers.loggedEmployeesManager.browseEmployees.BrowseEmployeesController">
+<AnchorPane prefHeight="590.0" prefWidth="900.0" styleClass="background" stylesheets="@../../../resources/stylesheets/login.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="managers.offerBrowser.basic.BrowseOffersController">
    <children>
-      <VBox layoutY="50.0" prefHeight="470.0" prefWidth="900.0">
+      <VBox layoutX="10.0" layoutY="60.0" prefHeight="470.0" prefWidth="900.0">
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="462.0" prefWidth="901.0">
                <children>
@@ -27,11 +27,16 @@
                               <Insets top="25.0" />
                            </VBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#onFitTo" prefHeight="26.0" prefWidth="106.0" text="Fit to offer">
+                        <Button mnemonicParsing="false" onAction="#onFitTo" prefHeight="26.0" prefWidth="106.0" text="Fit to employee">
+                           <VBox.margin>
+                              <Insets top="25.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#onEmploy" prefHeight="26.0" prefWidth="106.0" text="Employ">
                            <VBox.margin>
                               <Insets top="25.0" />
                            </VBox.margin></Button>
-                        <Button mnemonicParsing="false" onAction="#onDelete" prefHeight="26.0" prefWidth="106.0" text="Delete">
+                        <Button mnemonicParsing="false" onAction="#onFire" prefHeight="26.0" prefWidth="106.0" text="Fire">
                            <VBox.margin>
                               <Insets top="25.0" />
                            </VBox.margin>
@@ -49,21 +54,20 @@
                         <Insets />
                      </HBox.margin>
                   </VBox>
-                  <TableView fx:id="tabEmployees" prefHeight="462.0" prefWidth="806.0">
+                  <TableView fx:id="tabOffers" prefHeight="462.0" prefWidth="738.0">
                      <columns>
-                        <TableColumn fx:id="colID" prefWidth="43.99996793270111" text="Id" />
-                        <TableColumn fx:id="colName" prefWidth="105.5999755859375" text="Name" />
-                        <TableColumn fx:id="colForname" prefWidth="97.60003662109375" text="Forname" />
-                        <TableColumn fx:id="colCoutry" prefWidth="99.99993896484375" text="Country" />
-                        <TableColumn fx:id="colLanguages" prefWidth="135.20004272460938" text="Languages" />
-                        <TableColumn fx:id="colPermission" minWidth="0.0" prefWidth="148.79998779296875" text="Permission" />
-                        <TableColumn fx:id="colFormerPostition" minWidth="0.0" prefWidth="124.0" text="Former positions" />
+                        <TableColumn fx:id="colID" prefWidth="55.999998450279236" text="Id" />
+                        <TableColumn fx:id="colPosition" prefWidth="135.1999740600586" text="Position" />
+                        <TableColumn fx:id="colCompanyName" prefWidth="156.800048828125" text="Company name" />
+                        <TableColumn fx:id="colCountry" prefWidth="136.79998779296875" text="Country" />
+                        <TableColumn fx:id="colCity" minWidth="0.0" prefWidth="167.99990844726562" text="City" />
+                        <TableColumn fx:id="colVacancy" minWidth="0.0" prefWidth="87.2000732421875" text="Vacancy" />
                      </columns>
                   </TableView>
                </children>
             </HBox>
          </children>
       </VBox>
-      <Button layoutX="815.0" layoutY="547.0" mnemonicParsing="false" onAction="#onReturn" text="Return" />
+      <Button layoutX="825.0" layoutY="557.0" mnemonicParsing="false" onAction="#onReturn" text="Return" />
    </children>
 </AnchorPane>

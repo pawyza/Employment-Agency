@@ -6,30 +6,30 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="cv" stylesheets="@../../../../resources/stylesheets/login.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="managers.loggedEmployeesManager.browseEmployees.fullInformation.EmployeeViewController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="cv" stylesheets="@../../../resources/stylesheets/login.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="managers.offerBrowser.fullInformation.OfferViewController">
    <children>
-      <VBox layoutX="100.0" layoutY="110.0" prefHeight="222.0" prefWidth="400.0">
+      <VBox layoutY="110.0" prefHeight="222.0" prefWidth="600.0">
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name:">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Position:">
                      <HBox.margin>
                         <Insets right="10.0" />
                      </HBox.margin>
                   </Text>
-                  <Text fx:id="txtName" strokeType="OUTSIDE" strokeWidth="0.0" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Forname:">
+                  <Text fx:id="txtPosition" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trade:">
                      <HBox.margin>
                         <Insets left="50.0" right="10.0" />
                      </HBox.margin>
                   </Text>
-                  <Text fx:id="txtForename" strokeType="OUTSIDE" strokeWidth="0.0" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Brith date:">
+                  <Text fx:id="txtTrade" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Company name:">
                      <HBox.margin>
                         <Insets left="40.0" right="10.0" />
                      </HBox.margin>
                   </Text>
-                  <Text fx:id="txtBirthDate" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text fx:id="txtCompanyName" strokeType="OUTSIDE" strokeWidth="0.0" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
@@ -40,37 +40,49 @@
                      </HBox.margin>
                   </Text>
                   <Text fx:id="txtCountry" strokeType="OUTSIDE" strokeWidth="0.0" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Natvie language:">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="City:">
                      <HBox.margin>
                         <Insets left="40.0" right="10.0" />
                      </HBox.margin>
                   </Text>
-                  <Text fx:id="txtNativeLanguage" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text fx:id="txtCity" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Offer type:">
+                     <HBox.margin>
+                        <Insets left="40.0" right="10.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fx:id="txtOfferType" strokeType="OUTSIDE" strokeWidth="0.0" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Phone number:">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Employed:">
                      <HBox.margin>
                         <Insets right="10.0" />
                      </HBox.margin>
                   </Text>
-                  <Text fx:id="txtPhone" strokeType="OUTSIDE" strokeWidth="0.0">
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Employed on offer:">
+                  <Text fx:id="txtEmployees" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Vacancy:">
                      <HBox.margin>
                         <Insets left="40.0" right="10.0" />
                      </HBox.margin>
                   </Text>
-                  <Text fx:id="txtOfferId" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text fx:id="txtVacancy" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Salary:">
+                     <HBox.margin>
+                        <Insets left="40.0" right="10.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fx:id="txtSalary" strokeType="OUTSIDE" strokeWidth="0.0" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Additional languages:">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Required languages:">
                      <HBox.margin>
                         <Insets right="10.0" />
                      </HBox.margin>
@@ -80,22 +92,22 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Former positions:">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Required permissions::">
                      <HBox.margin>
                         <Insets right="10.0" />
                      </HBox.margin>
                   </Text>
-                  <Text fx:id="txtFormerPositions" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text fx:id="txtPermissions" strokeType="OUTSIDE" strokeWidth="0.0" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="400.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Permissions:">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Details:">
                      <HBox.margin>
                         <Insets right="10.0" />
                      </HBox.margin>
                   </Text>
-                  <Text fx:id="txtPermission" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text fx:id="txtDetails" strokeType="OUTSIDE" strokeWidth="0.0" />
                </children>
             </HBox>
          </children>

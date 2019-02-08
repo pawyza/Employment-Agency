@@ -1,13 +1,17 @@
-package managers.loggedEmployeesManager.browseOffers;
+package managers.offerBrowser;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Control;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.text.Text;
 import managers.LoggedUser;
 
 import java.math.BigDecimal;
+import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -34,12 +38,26 @@ public class BrowseOffersTable {
         this.colID.setCellValueFactory(new PropertyValueFactory<>("id"));
         this.colPosition.setCellValueFactory(new PropertyValueFactory<>("position"));
         this.colCompanyName.setCellValueFactory(new PropertyValueFactory<>("companyName"));
+        this.colCompanyName.setCellFactory(tc -> {
+            TableCell<OfferObject, String> cell = new TableCell<>();
+            Text text = new Text();
+            cell.setGraphic(text);
+            cell.setPrefHeight(Control.USE_COMPUTED_SIZE);
+            text.wrappingWidthProperty().bind(colCompanyName.widthProperty());
+            text.textProperty().bind(cell.itemProperty());
+            return cell ;});
         this.colCountry.setCellValueFactory(new PropertyValueFactory<>("country"));
         this.colCity.setCellValueFactory(new PropertyValueFactory<>("city"));
         this.colVacancy.setCellValueFactory(new PropertyValueFactory<>("vacancy"));
         prepareObservableList();
         this.tabOffers.setItems(objectObservableList);
     }
+
+
+    public ObservableList<OfferObject> getObjectObservableList() {
+        return objectObservableList;
+    }
+
 
     public void prepareObservableList() throws SQLException {
         ArrayList<Integer> idArray = new ArrayList<>();
@@ -80,7 +98,20 @@ public class BrowseOffersTable {
                 result.add(resultSet.getString("DETALE_OFERT"));
             }
             offerObject.setDetails(result);
+            ArrayList<Integer> employees = new ArrayList<>();
+            resultSet = statement.executeQuery("SELECT ID_PRACOWNIKA FROM AKTUALNIE_ZATRUDNIENI WHERE ID_OFERTY=" + id);
+            while (resultSet.next()){
+                employees.add(resultSet.getInt("ID_PRACOWNIKA"));
+            }
+            offerObject.setEmployeesID(employees);
             objectObservableList.add(offerObject);
         }
+    }
+
+    public void delete(int id) throws SQLException {
+        CallableStatement cs = LoggedUser.getConnection().prepareCall("{call sp_DELETE_OFERTA (?)}");
+        cs.setInt(1,objectObservableList.get(id).getId());
+        cs.execute();
+        objectObservableList.remove(id);
     }
 }
