@@ -2,12 +2,19 @@ package managers.loggedEmployersManager.offerAdd;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import managers.Switcher;
+import managers.loggedEmployersManager.offerAdd.detailsChoice.DetailsChoiceController;
+import managers.loggedEmployersManager.offerAdd.languageChoice.LanguagesChoiceController;
+import startPack.Main;
 
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -65,9 +72,17 @@ public class OfferAddController implements Initializable {
             newOfferObject.setSalary(new BigDecimal(txtSalary.getText()));
             newOfferObject.setVacancy(Integer.parseInt(txtVacancy.getText()));
             errorMessage.setText("");
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("/managers/loggedEmployersManager/offerAdd/languageChoice/languagesChoicePane.fxml"));
+            Parent root = fxmlLoader.load();
+            LanguagesChoiceController languagesChoiceController = fxmlLoader.getController();
+            languagesChoiceController.prepare(newOfferObject);
+            Main.stage.setScene(new Scene(root));
         } catch (RuntimeException e) {
             e.printStackTrace();
             errorMessage.setText("Values are incorrect");
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

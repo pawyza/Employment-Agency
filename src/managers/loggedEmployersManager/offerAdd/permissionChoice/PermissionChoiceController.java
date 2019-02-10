@@ -9,9 +9,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import managers.loggedEmployeesManager.addEmployee.formerPositionAdding.FormerPositionsAddingController;
 import managers.loggedEmployersManager.offerAdd.ChoiceBoxContainer;
 import managers.loggedEmployersManager.offerAdd.NewOfferObject;
+import managers.loggedEmployersManager.offerAdd.UniversalTableController;
+import managers.loggedEmployersManager.offerAdd.detailsChoice.DetailsChoiceController;
 import startPack.Main;
 
 import java.io.IOException;
@@ -20,11 +21,16 @@ import java.util.ResourceBundle;
 
 public class PermissionChoiceController implements Initializable {
 
-    NewOfferObject newOfferObject;
+    private NewOfferObject newOfferObject;
+    private UniversalTableController permissionsTable;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
     new ChoiceBoxContainer().choicePermission(choicePermission);
+    permissionsTable = new UniversalTableController(tabPermissions,colPermission);
+        choicePermission.getSelectionModel().selectedItemProperty().addListener((observableValue, number, t1) -> {
+            permissionsTable.add(choicePermission.getValue());
+        });
     }
 
     public void prepare(NewOfferObject newOfferObject){
@@ -43,7 +49,7 @@ public class PermissionChoiceController implements Initializable {
     @FXML
     void onDelete(ActionEvent event) {
         try {
-            permissionsTable.updateRemove(tabPermissions.getSelectionModel().getSelectedItem());
+            permissionsTable.delete(tabPermissions.getSelectionModel().getSelectedItem());
         }catch (RuntimeException e){
             System.out.println("Brak wybranego elementu");
         }
@@ -52,13 +58,12 @@ public class PermissionChoiceController implements Initializable {
     @FXML
     void next(ActionEvent event) {
         try {
-            newOfferObject.setPermissions(languagesTable.getAdditionalLanguages());
+            newOfferObject.setPermissions(permissionsTable.getObservable());
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("/managers/loggedEmployeesManager/addEmployee/formerPositionAdding/formerPositionsAddingPane.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("/managers/loggedEmployersManager/offerAdd/detailsChoice/detailsChoicePane.fxml"));
             Parent root = fxmlLoader.load();
-            FormerPositionsAddingController formerPositionsAddingController = fxmlLoader.getController();
-            formerPositionsAddingController .setDataContainer(dataContainer);
-            formerPositionsAddingController.prepare();
+            DetailsChoiceController detailsChoiceController = fxmlLoader.getController();
+            detailsChoiceController.prepare(newOfferObject);
             Main.stage.setScene(new Scene(root));
         } catch (IOException exception) {
             throw new RuntimeException(exception);

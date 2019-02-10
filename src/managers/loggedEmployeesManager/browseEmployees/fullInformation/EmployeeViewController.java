@@ -18,7 +18,7 @@ public class EmployeeViewController {
         txtCountry.setText(employeeObject.getCountry());
         txtNativeLanguage.setText(employeeObject.getNativeLanguage());
         txtPhone.setText(String.valueOf(employeeObject.getNumber()));
-        txtLanguages.setText(prepLanguages(employeeObject.getAllLanguages()));
+        txtLanguages.setText(employeeObject.getAllLanguagesRecord());
         txtFormerPositions.setText(employeeObject.getFormerPositionsRecord());
         txtPermission.setText(employeeObject.getEmployeePermissionsRecord());
         try {
@@ -57,24 +57,6 @@ public class EmployeeViewController {
 
     @FXML
     private Text txtPermission;
-
-    private String prepLanguages(ArrayList<String> list){
-        list.remove(0);
-        StringBuilder sb = new StringBuilder();
-        int i = 0;
-        for (String s:list) {
-            sb.append(s+", ");
-            if(sb.length()>50*i){
-                sb.append("\n");
-                i++;
-            }
-        }
-        if(sb.length()>2)
-            sb.delete(sb.length()-2,sb.length());
-        else
-            sb.append("BRAK");
-        return sb.toString();
-    }
 
     private String getOfferId(int id) throws SQLException {
         Statement statement = LoggedUser.getConnection().createStatement();

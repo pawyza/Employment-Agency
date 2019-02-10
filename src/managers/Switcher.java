@@ -8,6 +8,10 @@ import startPack.Main;
 import java.io.IOException;
 
 public class Switcher {
+    /**
+     * metoda zmieniajaca aktualny panel na nowy
+     * @param path nowa sciezka do nowego panelu
+     */
     public void change(String path){
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
@@ -19,6 +23,9 @@ public class Switcher {
         }
     }
 
+    /**
+     * Metoda cofajaca do ekranu logowania
+     */
     public void logOut(){
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();

@@ -22,7 +22,11 @@
                               <Insets top="25.0" />
                            </VBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#onFindBy" prefHeight="26.0" prefWidth="106.0" text="Find by">
+                        <Button mnemonicParsing="false" onAction="#onDelete" prefHeight="26.0" prefWidth="106.0" text="Delete">
+                           <VBox.margin>
+                              <Insets top="25.0" />
+                           </VBox.margin></Button>
+                        <Button mnemonicParsing="false" onAction="#onFindBy" prefHeight="26.0" prefWidth="106.0" text="Find by" visible="false">
                            <VBox.margin>
                               <Insets top="25.0" />
                            </VBox.margin>
@@ -32,7 +36,6 @@
                               <Insets top="10.0" />
                            </VBox.margin>
                         </Text>
-                        <Button mnemonicParsing="false" onAction="#onDelete" prefHeight="26.0" prefWidth="106.0" text="Delete" />
                      </children>
                      <opaqueInsets>
                         <Insets />

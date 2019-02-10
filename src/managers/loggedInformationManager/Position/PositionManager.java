@@ -66,7 +66,7 @@ public class PositionManager {
 
     public void updateRemove(int value) throws RuntimeException, SQLException {
         Statement statement = LoggedUser.getConnection().createStatement();
-        if (!statement.execute("DELETE FROM " + item +" WHERE " + columnName + "='" + observableList.get(value).getPosition() + "'"))
+        if (!statement.execute("DELETE FROM STANOWISKA WHERE " + columnName + "='" + observableList.get(value).getPosition() + "'"))
             observableList.remove(value);
     }
 

@@ -22,6 +22,11 @@ public class LoginPanel {
     @FXML
     private Text txtResponse;
 
+    /**
+     * Metoda odpowiadajaca za zalogowanie
+     * @param event
+     * @throws IOException Blad wyrzucny, gdy uzytkowik poda niepoprawny login lub haslo
+     */
     @FXML
     void loginPressed(ActionEvent event) throws IOException {
         Logging logging = new Logging(txtLogin.getText(),txtPassword.getText());

@@ -119,7 +119,7 @@
       <Button layoutX="234.0" layoutY="328.0" mnemonicParsing="false" onAction="#onNext" prefHeight="26.0" prefWidth="131.0" text="Next" />
       <HBox alignment="CENTER" layoutX="107.0" layoutY="357.0" prefHeight="26.0" prefWidth="386.0">
          <children>
-            <Text fx:id="errorMessage" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="1.0" />
+            <Text fx:id="errorMessage" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" />
          </children>
       </HBox>
    </children>

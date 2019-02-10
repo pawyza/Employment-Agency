@@ -15,15 +15,29 @@ public class Logging {
     private String password;
     private Connection connection;
 
+    /**
+     * konstruktor klasy login
+     * @param login
+     * @param password
+     */
     public Logging(String login, String password) {
         this.login = login;
         this.password = password;
     }
 
+    /**
+     * Metoda odpowiadajaca za przygotowanie polaczenia z baza
+     * @throws SQLException blad wyrzucany gdy polaczenie jest niepoprawne
+     */
     public void checkLogin() throws SQLException {
-            connection =  DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=EmploymentAgency;user=" + login + ";password=" + password);
+            //connection =  DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=EmploymentAgency;user=" + login + ";password=" + password);
+            connection =  DriverManager.getConnection("jdbc:sqlserver://projektpwr2.database.windows.net:1433;database=EmploymentAgency;user=" + login + "@projektpwr2;password=" + password + ";encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;");
     }
 
+    /**
+     * Metoda sprawdzajaca ktory interfejs nalezy zaladowac
+     * @throws NullPointerException
+     */
     public void logIn() throws NullPointerException{
         switch(login) {
             case "ManPracownikow":
@@ -39,6 +53,10 @@ public class Logging {
         throw new NullPointerException();
     }
 
+    /**
+     * Metoda ustawiajaca nowy interfejs oraz podajaca polaczenie
+     * @param type sciezka do interfejsu
+     */
     private void typeChanger(String type){
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();

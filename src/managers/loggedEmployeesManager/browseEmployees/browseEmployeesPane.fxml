@@ -22,20 +22,20 @@
                               <Insets top="25.0" />
                            </VBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#onFindBy" prefHeight="26.0" prefWidth="106.0" text="Find by">
-                           <VBox.margin>
-                              <Insets top="25.0" />
-                           </VBox.margin>
-                        </Button>
-                        <Button mnemonicParsing="false" onAction="#onFitTo" prefHeight="26.0" prefWidth="106.0" text="Fit to offer">
-                           <VBox.margin>
-                              <Insets top="25.0" />
-                           </VBox.margin></Button>
                         <Button mnemonicParsing="false" onAction="#onDelete" prefHeight="26.0" prefWidth="106.0" text="Delete">
                            <VBox.margin>
                               <Insets top="25.0" />
                            </VBox.margin>
                         </Button>
+                        <Button mnemonicParsing="false" onAction="#onFindBy" prefHeight="26.0" prefWidth="106.0" text="Find by" visible="false">
+                           <VBox.margin>
+                              <Insets top="25.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#onFitTo" prefHeight="26.0" prefWidth="106.0" text="Fit to offer" visible="false">
+                           <VBox.margin>
+                              <Insets top="25.0" />
+                           </VBox.margin></Button>
                         <Text fx:id="txtMessage" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="140.0">
                            <VBox.margin>
                               <Insets top="10.0" />

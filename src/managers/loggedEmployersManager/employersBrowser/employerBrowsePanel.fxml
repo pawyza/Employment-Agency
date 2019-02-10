@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="590.0" prefWidth="900.0" styleClass="background" stylesheets="@../../../resources/stylesheets/login.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="managers.loggedEmployersManager.employersBrowser.EmployerBrowseController">
    <children>
       <VBox layoutY="50.0" prefHeight="470.0" prefWidth="900.0">
@@ -18,7 +17,7 @@
                <children>
                   <VBox alignment="TOP_CENTER" prefHeight="288.0" prefWidth="150.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#onFindBy" prefHeight="26.0" prefWidth="106.0" text="Find by">
+                        <Button mnemonicParsing="false" onAction="#onFindBy" prefHeight="26.0" prefWidth="106.0" text="Find by" visible="false">
                            <VBox.margin>
                               <Insets top="25.0" />
                            </VBox.margin>

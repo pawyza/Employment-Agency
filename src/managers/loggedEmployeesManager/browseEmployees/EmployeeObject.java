@@ -91,7 +91,7 @@ public class EmployeeObject {
 
     public void setAllLanguages(ArrayList<String> allLanguages) {
         this.allLanguages = allLanguages;
-        allLanguagesRecord = buildString(allLanguages);
+        allLanguagesRecord = prep(allLanguages);
     }
 
     public ArrayList<String> getFormerPositions() {
@@ -100,7 +100,7 @@ public class EmployeeObject {
 
     public void setFormerPositions(ArrayList<String> formerPositions) {
         this.formerPositions = formerPositions;
-        formerPositionsRecord = buildString(formerPositions);
+        formerPositionsRecord = prep(formerPositions);
     }
 
 
@@ -110,16 +110,23 @@ public class EmployeeObject {
 
     public void setEmployeePermissions(ArrayList<String> employeePermissions) {
         this.employeePermissions = employeePermissions;
-        employeePermissionsRecord = buildString(employeePermissions);
+        employeePermissionsRecord = prep(employeePermissions);
     }
 
-    private String buildString(ArrayList<String> al){
+    private String prep(ArrayList<String> list){
         StringBuilder sb = new StringBuilder();
-        for (String s:al) {
+        int i = 0;
+        for (String s:list) {
             sb.append(s+", ");
+            if(sb.length()>50*i){
+                sb.append("\n");
+                i++;
+            }
         }
         if(sb.length()>2)
-        sb.delete(sb.length()-2,sb.length());
+            sb.delete(sb.length()-2,sb.length());
+        else
+            sb.append("BRAK");
         return sb.toString();
     }
 }

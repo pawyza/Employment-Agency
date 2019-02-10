@@ -11,6 +11,7 @@ import managers.loggedEmployeesManager.addEmployee.DataContainer;
 import startPack.Main;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class AddingResultController {
     private DataContainer dataContainer;
@@ -26,21 +27,9 @@ public class AddingResultController {
         txtNativeLanguage.setText(dataContainer.getNativeLanguage());
         txtCountry.setText(dataContainer.getCountry());
         txtPhone.setText(String.valueOf(dataContainer.getNumber()));
-        StringBuilder stringBuilder = new StringBuilder();
-        for (String i: dataContainer.getAdditionalLanguages()) {
-            stringBuilder.append(i).append(" ");
-        }
-        txtLanguages.setText(stringBuilder.toString());
-        stringBuilder = new StringBuilder();
-        for (String i: dataContainer.getFormerPositions()) {
-            stringBuilder.append(i).append(" ");
-        }
-        txtFormerPositions.setText(stringBuilder.toString());
-        stringBuilder = new StringBuilder();
-        for (String i: dataContainer.getEmployeePermissions()) {
-            stringBuilder.append(i).append(" ");
-        }
-        txtPermission.setText(stringBuilder.toString());
+        txtLanguages.setText(prep(dataContainer.getAdditionalLanguages()));
+        txtFormerPositions.setText(prep(dataContainer.getFormerPositions()));
+        txtPermission.setText(prep(dataContainer.getEmployeePermissions()));
     }
 
     @FXML
@@ -95,5 +84,22 @@ public class AddingResultController {
         } catch (RuntimeException e) {
             System.out.println("Blad zapisu");
         }
+    }
+
+    private String prep(ArrayList<String> list){
+        StringBuilder sb = new StringBuilder();
+        int i = 0;
+        for (String s:list) {
+            sb.append(s+", ");
+            if(sb.length()>50*i){
+                sb.append("\n");
+                i++;
+            }
+        }
+        if(sb.length()>2)
+            sb.delete(sb.length()-2,sb.length());
+        else
+            sb.append("BRAK");
+        return sb.toString();
     }
 }

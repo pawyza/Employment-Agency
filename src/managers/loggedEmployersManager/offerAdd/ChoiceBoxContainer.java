@@ -42,7 +42,7 @@ public class ChoiceBoxContainer {
     }
 
     public void choicePermission(ChoiceBox<String> choiceBox) {
-        choiceBox.setItems(FXCollections.observableList(loadData("SELECT NAZWA_UPRAWNIENIA FORM UPRAWNIENIA")));
+        choiceBox.setItems(FXCollections.observableList(loadData("SELECT NAZWA_UPRAWNIENIA FROM UPRAWNIENIA")));
     }
     private ArrayList<String> loadData(String sql){
             ArrayList<String> boxSet = new ArrayList<>();

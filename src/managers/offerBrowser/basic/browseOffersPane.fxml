@@ -22,16 +22,6 @@
                               <Insets top="25.0" />
                            </VBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#onFindBy" prefHeight="26.0" prefWidth="106.0" text="Find by">
-                           <VBox.margin>
-                              <Insets top="25.0" />
-                           </VBox.margin>
-                        </Button>
-                        <Button mnemonicParsing="false" onAction="#onFitTo" prefHeight="26.0" prefWidth="106.0" text="Fit to employee">
-                           <VBox.margin>
-                              <Insets top="25.0" />
-                           </VBox.margin>
-                        </Button>
                         <Button mnemonicParsing="false" onAction="#onEmploy" prefHeight="26.0" prefWidth="106.0" text="Employ">
                            <VBox.margin>
                               <Insets top="25.0" />
@@ -46,6 +36,16 @@
                               <Insets top="10.0" />
                            </VBox.margin>
                         </Text>
+                        <Button mnemonicParsing="false" onAction="#onFindBy" prefHeight="26.0" prefWidth="106.0" text="Find by" visible="false">
+                           <VBox.margin>
+                              <Insets top="25.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#onFitTo" prefHeight="26.0" prefWidth="106.0" text="Fit to employee" visible="false">
+                           <VBox.margin>
+                              <Insets top="25.0" />
+                           </VBox.margin>
+                        </Button>
                      </children>
                      <opaqueInsets>
                         <Insets />
